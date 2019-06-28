@@ -14,6 +14,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    private var resnetModel = Resnet50()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,16 +28,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a new scene
         let scene = SCNScene()
         
-        let text = SCNText(string: "DON'T ENTER!", extrusionDepth: 0)
-        text.font = UIFont(name: "Futura", size: 0.48)
-        text.firstMaterial?.diffuse.contents = UIColor.orange
-        text.firstMaterial?.specular.contents = UIColor.white
-        
-        let textNode = SCNNode(geometry: text)
-        textNode.position = SCNVector3(0, 0, -0.5)
-        textNode.scale = SCNVector3Make(0.2, 0.2, 0.2)
-        
-        scene.rootNode.addChildNode(textNode)
+//        let text = SCNText(string: "DON'T ENTER!", extrusionDepth: 0)
+//        text.font = UIFont(name: "Futura", size: 0.48)
+//        text.firstMaterial?.diffuse.contents = UIColor.orange
+//        text.firstMaterial?.specular.contents = UIColor.white
+//
+//        let textNode = SCNNode(geometry: text)
+//        textNode.position = SCNVector3(0, 0, -0.5)
+//        textNode.scale = SCNVector3Make(0.2, 0.2, 0.2)
+//
+//        scene.rootNode.addChildNode(textNode)
         
         
         //let scene = SCNScene(named: "art.scnassets/ship.scn")!
